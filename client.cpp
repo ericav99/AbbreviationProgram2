@@ -20,7 +20,14 @@ void testKeyInOut();
 void testConvertToInteger();
 void testKeyOperatorEquals();
 void testKeyOperatorEE();
-void test
+void testKeyOperatorLT();
+
+void testItemInOut();
+void testItemCopyCopyConstructor();
+void testItemEquals();
+void testItemEE();
+void testItemLT();
+
 int main()
 {
    int convertedNumber;
@@ -150,4 +157,103 @@ void testKeyOperatorEE()
 	   cout<< firstOne << " is not the same as " << secondOne <<endl;
 }
 
-void 
+void testKeyOperatorLT()
+{
+    Key firstOne;
+    Key secondOne;
+
+    cout<< "Testing the operator< function for key" <<endl;
+    cout<< "Enter textingAbbreviation for firstOne: ";
+    cin>>firstOne;
+    cout<< "Enter textingAbbreviation for secondOne: ";
+    cin>>secondOne;
+
+    cout << "Showing the first textingAbbreviation between # signs" << endl;
+    cout << "#";
+    cout<<firstOne; //displays the textingAbbreviation from instance firstOne.
+    cout<< "#"<<endl;
+    cout<< "Showing the second textingAbbreviation between # signs" <<endl;
+    cout<< "#";
+    cout<<secondOne;    //displays the textingAbbreviation from instance secondOne.
+    cout<<"#"<<endl;
+
+    cout<< "Checking to see if firstOne is less than secondOne..."<<endl;
+    if (firstOne < secondOne)
+    {
+        cout<< firstOne << " is less than " << secondOne <<endl;
+    }
+    else
+        cout<< firstOne << " is greater than " << secondOne <<endl;
+}
+
+
+void testItemEquals()
+{
+    Item firstOne;
+    Item secondOne;
+    Item thirdOne;
+
+    cout<< "Testing the operator= function for item" <<endl;
+    cout<< "Enter three items (each with textingAbbreviation and meaning):";
+    cin>> firstOne >> secondOne >> thirdOne;
+
+    cout << "Showing the textingAbbreviation and meanings between # signs" << endl;
+    cout << "#" << firstOne << "# " << secondOne << "# " << thirdOne << "# " << endl;
+
+    cout<<endl<<endl;
+
+    cout<<" Assigning the firstOne to the secondOne and thirdOne "<<endl;
+    thirdOne = secondOne = firstOne;    //Copies the textingAbbreviation and meaning from instance firstOne over to the empty textingAbbreviation and meaning  of instance secondOne and thirdOne
+    cout << endl;
+    cout << "Showing that the secondOne got assigned between # signs" << endl;
+    cout << "#";
+    cout << secondOne;        // Displays secondOne after being copying value from firstOne
+    cout << "#"<<endl;
+    cout << "showing that the thirdOne got assigned between # signs" << endl;
+    cout << "#";
+    cout << thirdOne;        //Displays thirdOne after copying value from secondOne
+    cout << "#"<<endl;
+}
+
+
+void testItemLT()
+{
+    Item firstOne;
+    Item secondOne;
+    Item thirdOne;
+
+    cout << "Testing the operator< function for Item" << endl;
+    cout<< "Enter three items (each with textingAbbreviation and meaning) so that firstOne and secondOne ARE equal and thirdOne is NOT equal:";
+    cin>> firstOne >> secondOne >> thirdOne;
+
+    cout << "Showing the first item between # signs" << endl;
+    cout << "#";
+    cout << firstOne; //displays the textingAbbreviation and meaning from instance firstOne.
+    cout << "#"<<endl;
+    cout << "Showing the second item between # signs" << endl;
+    cout << "#";
+    cout << secondOne;    //displays the textingAbbreviation and meaning from instance secondOne.
+    cout << "#"<<endl;
+    cout << "Showing the third item between # signs" << endl;
+    cout << "#";
+    cout << thirdOne;    //displays the textingAbbreviation and meaning from instance thirdOne.
+    cout << "#"<<endl;
+
+    cout << "Checking to see if firstOne is less than secondOne..." << endl;
+    if (firstOne < secondOne)
+    {
+        cout << firstOne << " is less than " << secondOne << endl;
+    }
+    else
+        cout << firstOne << " is greater than " << secondOne << endl;
+
+
+    cout << "Checking to see if firstOne is less than thirdOne..." << endl;
+    if (firstOne < thirdOne)
+    {
+        cout << firstOne << " is less than " << thirdOne << endl;
+    }
+    else
+        cout << firstOne << " is greater than " << thirdOne << endl;
+
+}
