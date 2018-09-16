@@ -63,6 +63,6 @@ Item(const Item& rightHandSideItem);
 Item& operator=(const Item& rightHandSideItem);
 
 private:
-   string textingMeaning;
+   string meaning;
 };
 #endif         

@@ -9,9 +9,11 @@
 //Username eav used in dropoff
 #include "key.h" 
 #include "item.h"
+#include <iostream>
 
 istream& operator>> (istream& input, Item& rightHandSideItem)
 {
+	char newline;
 	input>> rightHandSideItem.textingAbbreviation;
 	input.get(newline);
 	getline(input, rightHandSideItem.meaning);
@@ -66,12 +68,12 @@ Item newObject = rightHandSideItem;
 //pre
 //post
 //usage
-Item& operator=(const Item& rightHandSideItem)
+Item& Item::operator=(const Item& rightHandSideItem)
 {
-	if (this != &rightHandSideKey)
+	if (this != &rightHandSideItem)
 	{
-       textingAbbreviation = rightHandSideKey.textingAbbreviation;
-	   meaning = rightHandSideKey.meaning;
+       textingAbbreviation = rightHandSideItem.textingAbbreviation;
+	   meaning = rightHandSideItem.meaning;
 	}
 	return *this;
 }
