@@ -49,7 +49,6 @@ Key(string keyText);
 //usage automatically done at the end of scope
 ~Key();
 
-
 //copies a texting abbreviation
 //pre rightHandSideKey has been assigned a texting abbreviation
 //post Key object has a copy of rightHandSideKey

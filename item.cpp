@@ -31,14 +31,14 @@ istream& operator>> (istream& input, Item& rightHandSideItem)
 ostream& operator<< (ostream& output, const Item& rightHandSideItem)
 {
 output << rightHandSideItem.textingAbbreviation;
-cout<< " means: ";
+cout<< ":  ";
 output << rightHandSideItem.meaning;
 return output;	
 }
 
 
 //creates an empty item (texting abbreviation and its associated meaning)
-//post 
+//post Item object is has an empty textingAbbreviation and an empty meaning
 //usage Item aitem;
 Item::Item()
 {
@@ -56,18 +56,18 @@ Item::~Item()
 }
 
 //creates a new item and copies the right hand side item into item
-//pre
-//post
+//pre Item object is assigned the data members of Item Object rightHandSideItem
+//post Item object has a copy of the Item object rightHandSideItem
 //usage  Item myItem(yourItem);
 Item::Item(const Item& rightHandSideItem)
 {
-Item newObject = rightHandSideItem;
+*this = rightHandSideItem;
 }
 
-//
-//pre
-//post
-//usage
+//copies a textingAbbreviation and meaning
+//pre rightHandSideItem has been assigned a textingAbbreviation and a meaning
+//post Key object has a copy of rightHandSideItem
+//usage bkey = akey;
 Item& Item::operator=(const Item& rightHandSideItem)
 {
 	if (this != &rightHandSideItem)

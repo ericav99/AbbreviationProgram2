@@ -45,7 +45,7 @@ Key::Key()
 //usage Key akey("lol"); 
 Key::Key(string keyText)
 {
-   
+   *this = keyText;
 }
 
 //releases memory for a texting abbreviation
