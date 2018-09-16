@@ -5,7 +5,8 @@
 //     data object: a meaning of a texting abbreviation
 //     operations: create, destroy, copy create, copy
 //                 input, output
-
+//Eric Av and Ryan Brown
+//Username eav used in dropoff
 #include "key.h" 
 #include "item.h"
 
